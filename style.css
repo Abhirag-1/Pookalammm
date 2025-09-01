@@ -1,0 +1,241 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    top: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #850017; /* Dark red color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 10; /* Ensure title is above other elements */
+}
+.pookalam-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: rgb(133, 0, 86); /* Dark background as in the image */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.center-flower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background-color: #ffb700; /* Orange color for the star */
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    z-index: 2;
+}
+
+.center-flower::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(35deg);
+    width: 150px;
+    height: 150px;
+    background-color: #840101; /* Lighter orange for the inner star */
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    z-index: 3;
+}
+
+.center-flower::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #dd9fbf; /* Red center */
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.petals-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    background: linear-gradient(to right, #ffc32b, #fb5c22, #890000);
+    border-radius: 0 75px 75px 0;
+    transform-origin: 0% 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%); /* Vertically center the petal around its left edge */
+}
+
+.petal-1 {
+    transform: translateY(-50%) rotate(0deg) translateX(25px);
+}
+.petal-2 {
+    transform: translateY(-50%) rotate(45deg) translateX(25px);
+}
+.petal-3 {
+    transform: translateY(-50%) rotate(90deg) translateX(25px);
+}
+.petal-4 {
+    transform: translateY(-50%) rotate(135deg) translateX(25px);
+}
+.petal-5 {
+    transform: translateY(-50%) rotate(180deg) translateX(25px);
+}
+.petal-6 {
+    transform: translateY(-50%) rotate(225deg) translateX(25px);
+}
+.petal-7 {
+    transform: translateY(-50%) rotate(270deg) translateX(25px);
+}
+.petal-8 {
+    transform: translateY(-50%) rotate(315deg) translateX(25px);
+}
+
+.inner-ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border: 6px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    z-index: 2;
+}
+.outer-ring {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    overflow: hidden; /* Hide overflowing pseudo-elements */
+}
+
+.outer-ring::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background-color: inherit; /* Inherit background from parent */
+    z-index: 1;
+}
+
+.ring-1 {
+    width: 300px;
+    height: 300px;
+    background-color: #ff6c00;
+    z-index: 0;
+}
+
+.ring-1_5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* Increased size */
+    height: 300px; /* Increased size */
+    border: 6px solid rgb(179 0 0);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.ring-2 {
+    width: 350px;
+    height: 350px;
+    background-color: #ffb142;
+    z-index: -1;
+}
+
+.ring-3 {
+    width: 400px;
+    height: 400px;
+    background-color: #ff7f50;
+    z-index: -2;
+}
+
+.ring-4 {
+    width: 450px;
+    height: 450px;
+    background-color: #c20809;
+    z-index: -3;
+}
+
+.ring-4_5 {
+    width: 465px;
+    height: 465px;
+    background-color: #022d00;
+    z-index: -4;
+}
+
+.ring-4::before {
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(
+        from 
+        38deg, 
+        transparent -19deg 5deg, 
+        #850017 14deg 14deg
+    ); /* Scalloped effect */
+    border-radius: 50%;
+    z-index: -2; /* Above ring-4 but below other rings */
+    transform: scale(1.02); /* Slightly larger to show scalloped edge */
+}
+
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+#spin-toggle:checked ~ .pookalam-container .ring-4 {
+    animation: spin 2s linear;
+}
