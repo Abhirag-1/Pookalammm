@@ -231,4 +231,11 @@ body {
 }
 
 
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
+#spin-toggle:checked ~ .pookalam-container .ring-4 {
+    animation: spin 2s linear;
+}
